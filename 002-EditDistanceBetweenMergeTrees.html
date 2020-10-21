@@ -57,12 +57,24 @@
         </div>
         <div>
           <div class="problem-label">Summary</div>
-          <p>We begin with a merg</p>
-          <p>Defines an Edit distance whose goal is to be stable (less than maximum function distance) and discriminative (distance is always greater than bottleneck distance). The three elementary operations they use are 
+          <p>Let $(\mathbb{X},f)$ be a 2-dimensional scalar field. We define the merge tree $M$ of $(\mathbb{X},f)$ by defining an equivalence relation similar to a Reeb graph except instead of looking at the level sets of $f$, we look at the sub-level sets $(-\infty, a]$. The merge tree (or join tree) is a well-defined tree. Let $T$ be a rooted tree with vertex set $V$ and edge set $E$. In addition, we have a label set $\Sigma$ and a character $\lambda \notin \Sigma$ which represents the null or empty character, which corresponds to a 'gap'.</p>
+          <p>Defines an Edit distance whose goal is to be stable (less than maximum function distance) and discriminative (distance is always greater than bottleneck distance). The three elementary operations they use are
             <ul>
-              <li><i>Relabel:</i> A relabel $a \rightarrow b$ corresponds to changing the label of </li>
+              <li><i>Relabel:</i> A relabel $a \rightarrow b$ corresponds to changing the label $a$ is changed to the label $b$</li>
+              <li><i>Insertion:</i> An insert operation $\lambda \rightarrow b$ inserts a node $n$ with label $b$ as a child of another node $m$ by moving all children of node $m$ to be childrend of the new node $n$</li>
+              <li><i>Deletion:</i> A deletion operation $a \rightarrow \lambda$ removes a node $n$ with label $a$ and all the children of node $n$ are now children of the parent node of $n$ ($parent(n)$).</li>
             </ul>
           </p>
+          <p>Note that we have not yet defnied a labeling on the merge trees. </p>
+          <p>We define an <i>Edit Distance Mapping</i> as being a triple $(M_e,T_1,T_2)$, where $T_1$ and $T_2$ are two trees and $M_e$ is a collection of ordered pairs $(i,j)$. Furthermore, $t_1$ and $t_2$ are labelings of the nodes in $T_1$ and $T_2$. Lastly, the pairs in $M_e$ satisfy the following:
+            <ul>
+              <li>$i_1 = i_2$ iff $j_1 = j_2$</li>
+              <li>$t_1[i_1]$ is an ancestor of $t_1[i_2]$ iff $t_2[j_1]$ is an ancestor of $t_2[j_2]$.</li>
+            </ul>
+          </p>
+          <p>Then, the cost of transforming $T_1$ into $T_2$ would be the cost of all changes from $i$ to $j$, as well as the deletion of $i$ if there exists no corresponding $j$ and insertion of $j$ if there exists no corresponding $i$. We call this the cost of $M_e$, denoted as $\gamma(M_e)$. Minimizing this cost over every possible edit mappings has been shown to be NP-complete. Thus, we seek to constrain these problems to make them contractible.</p>
+          <p>Since the information encoded in merge trees is very specific, this limits the number of operations we can do. For example, if we were to delete a minima which connects to a saddle above and that saddle connects to no other minima, then this tree will now have a saddle as a leaf, which is no longer a merge tree. Thus, to make this correct, we sometimes need to delete minima and connecting saddles in pairs.</p>
+          <p>We can now define the set of costs we assign for merge trees. These costs are dependent on the persistence of these features. Let $p$ and $q$ be nodes in $T_1$ and $T_2$, respectively. Then, $p$ and $q$ are creators or destroyers of features in the merge trees. Let $(b_p,d_p)$ and $(b_q,d_q)$ be the birth and death times of these associated features, respectively.</p>
         </div>
       </div>
 
