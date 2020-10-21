@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/dreampulse/computer-modern-web-font/master/fonts.css">
+    <link rel="stylesheet" type="text/css" href="./style.css"/>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style type="text/css" media="print">
+      @page {
+          size: letter;   /* auto is the initial value */
+          margin: 0;  /* this affects the margin in the printer settings */
+      }
+
+    </style>
+    <link href="https://fonts.googleapis.com/css?family=Oswald|Roboto|Montserrat|Open+Sans&display=swap" rel="stylesheet">
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+          processEscapes: true
+        },
+        tex:{
+          tags: 'ams'
+        }
+      });
+    </script>
+    <script type="text/javascript"
+      src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="page">
+        <!-- <div class="header">
+          <div>Brian Bollen</div>
+          <div>Project Proposal</div>
+        </div> -->
+        <div>
+          <div class="problem-label">Title</div>
+          <p>The Edit Distance for Reeb Graphs of Surfaces</p>
+        </div>
+        <div>
+          <div class="problem-label">Authors</div>
+          <p>B. Di Fabio and C. Landi</p>
+        </div>
+        <div>
+          <div class="problem-label">Abstract</div>
+          <p> Reeb graphs are structural descriptors that capture shape properties of a topological space from the perspective of a chosen function. In this work we define a combinatorial metric for Reeb graphs of orientable surfaces in terms of the cost necessary to transform one graph into another by edit operations. The main contributions of this paper are the stability property and the optimality of this edit distance. More precisely, the stability result states that changes in the functions, measured by the maximum norm, imply not greater changes in the corresponding Reeb graphs, measured by the edit distance. The optimality result states that our edit distance discriminates Reeb graphs better than any other metric for Reeb graphs of surfaces satisfying the stability property.</p>
+        </div>
+        <div>
+          <div class="problem-label">Summary</div>
+          <p>Given a scalar field $(\mathbb{X},f)$, we can create its Reeb graph $(\mathbb{X}_f,\tilde{f})$. While the latter is a topological space, we define the <i>combinatorial</i> Reeb graph $\Gamma_f$ as being the graph whose vertices are critical points of the scalar field (and are consequentially vertices of $(\mathbb{X}_f,\tilde{f})$.) The edges of $\Gamma_f$ are exactly the edges of the Reeb graph (contracted cylinders which connect critical points). We define a labeling $l_f : V(\Gamma_f) \to \mathbb{R}$ on $\Gamma_f$ by stating that $l_f = f|_{C_f}$, where $C_f$ are the critical points of the scalar field. We call a <i>deformation</i> of $(\Gamma_f,l_f)$ to be any finite ordered sequence $T = (T_1,\ldots,T_n)$, where each $T_i$ is an <i>elementary deformation</i> (table given below). Furthermore, the elementary deformations have to act on the previously created graph (so an iterative process). We say $\mathcal{T}((\Gamma_f,l_f),(\Gamma_g,l_g)$ is the set of deformations turning $(\Gamma_f,l_f)$ into $(\Gamma_g,l_g)$.</p>
+          <p>Each elementary operation has an associated cost. We take each associated cost and sum them up to get the total cost of the entire transformation. The <i>Reeb Graph Edit Distance</i> is the infimum over all possible deformations from $(\Gamma_f,l_f)$ to $(\Gamma_g,l_g)$.</p>
+          <p>The set of deformations $\mathcal{T}$ is guaranteed to be non empty IF the two Reeb graphs are defined on the same domain. Furthermore, it is known to be less than or equal to the maximum function difference ranging over all points $x \in X$. </p>
+          <p>Let $\mathbb{M}$ be a 2-Dimensional manifold (a surface) and $f$ be a simple Morse function. The term "simple" refers to the fact that each critical level contains only one critical point (so the common definition that we have used). Let $\mathcal{D}(\mathbb{M})$ be the set of <i>self-diffeomorphisms</i> on $\mathbb{M}$. We say that $f,g$ are <i>Right Equivalent</i> if there exists a diffeomorphism $\zeta \in \mathcal{D}(\mathbb{M}$ such that $f = g \circ \zeta$. It can  be shown that two functions defined on the same $\mathbb{M}$ are R-equivalent if and only if their labeled Reeb graphs are isomorphic. We can now define a distance between two equivalence classes of simple morse functions defined on $\mathbb{M}$ (meaning the two associated Reeb graphs are NOT isomorphic) by $d_N ([f],[g]) = \inf_{\zeta \in \mathcal{D}(\mathbb{M})} || f - g \circ \zeta ||_{C^0}$. The $C^0$ refers to the maximum function distance ranging over the set of points in the manifold. This distance is called the <i>natural pseudo-idstance</i>. Instead of self-diffeomorphisms, we can have the same exact definition using self-homeomorphisms on $\mathbb{M}$ (not really sure the difference to be honest). </p>
+          <p>It can then be shown that $d_E((\Gamma_f,l_f),(\Gamma_g,l_g)) = d_N([f],[g])$. Thus, this edit distance is a metric on isomorphism classes of labeled Reeb Graphs. Furthermore, for every pair of simple morse functions $f,g$ defined on $\mathbb{M}$, we have that $d_E((\Gamma_f,l_f),(\Gamma_g,l_g)) \geq d_B(D_f,D_g)$, where $d_B$ is the botteleneck distance and $D_f,D_g$ are the persistence diagrams of $f,g$, respectively. In addition, $d_E((\Gamma_f,l_f),(\Gamma_g,l_g)) \geq d_FD((\mathbb{M}_f,\tilde{f}),(\mathbb{M}_g,\tilde{g}))$, where $d_FD$ refers to the functional distortion distance between the Reeb graphs $(\mathbb{M}_f,\tilde{f}),(\mathbb{M}_g,\tilde{g})$.</p>
+        </div>
+      </div>
+      <div class="page" style="display:flex;justify-content: center;align-items: center;">
+        <div style="margin-bottom:60px;font-weight:700">Below are the formal definitions for each elementary deformation.</div>
+        <img src="001-picture-2.png" width="90%"/>
+      </div>
+      <div class="page" style="display:flex;justify-content: center;align-items: center;">
+        <div style="margin-bottom:60px;font-weight:700">Below are examples for each elementary deformation.</div>
+        <img src="001-picture-1.png" width="90%"/>
+      </div>
+      <div class="page">
+        <div>
+          <div class="problem-label">Questions</div>
+          <ul>
+            <li>Is a two dimensional topological space equipped with a function, which turns out to be a scalar field, equivalent to just a 2-Dimensional Manifold equipped with a height function?</li>
+          </ul>
+        </div>
+        <div>
+          <div class="problem-label">Theoretical Contributions</div>
+          <p>Edit distance can be shown to be more discriminative than both the bottleneck distance of persistence diagrams and functional distortion distance between Reeb graphs. Because of this, I believe it is automatically more discriminative than the interleaving distance between Reeb graphs. Check the "strong equivalence of functional distortion distance and interleaving distance" paper to check .</p>
+        </div>
+        <div>
+          <div class="problem-label">Computational Contributions</div>
+          <p>None</p>
+        </div>
+      </div>
+     
+
+
+    </div>
+  </body>
+</html>
+
+
+
+
+
+      
