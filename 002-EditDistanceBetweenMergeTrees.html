@@ -37,7 +37,7 @@
         </div> -->
         <div>
           <div class="problem-label">Title</div>
-          <p>The Edit Distance for Reeb Graphs of Surfaces</p>
+          <p>Edit Distance Between Merge Trees</p>
         </div>
         <div>
           <div class="problem-label">Authors</div>
@@ -78,7 +78,7 @@
       <div class="page">
         <p>Then, the cost of transforming $T_1$ into $T_2$ would be the cost of all changes from $i$ to $j$, as well as the deletion of $i$ if there exists no corresponding $j$ and insertion of $j$ if there exists no corresponding $i$. We call this the cost of $M_e$, denoted as $\gamma(M_e)$. Minimizing this cost over every possible edit mappings has been shown to be NP-complete. Thus, we seek to constrain these problems to make them contractible.</p>
         <p>Since the information encoded in merge trees is very specific, this limits the number of operations we can do. For example, if we were to delete a minima which connects to a saddle above and that saddle connects to no other minima, then this tree will now have a saddle as a leaf, which is no longer a merge tree. Thus, to make this correct, we sometimes need to delete minima and connecting saddles in pairs.</p>
-        <p>When measuring the edit distance, one issue that is encountered is small perturbations in the data set can lead to large differences in the cost. Consider two saddles that are have close function value. If the order of the saddles were reversed, then the pairings between these saddles and the minima below also changes. Since the edit cost is dependent on these persistence pairs, the edit cost is drastically affected. To alleviate this, they introduce a parameter $\varespilon$ which is known as the <i>stability parameter</i>. Before running the edit cost algorithm, each merge tree is run to a stabalizing algroithm where two saddles that are within $\varepsilon$ of each other are merged into a single saddle (bottom up).</p>
+        <p>When measuring the edit distance, one issue that is encountered is small perturbations in the data set can lead to large differences in the cost. Consider two saddles that are have close function value. If the order of the saddles were reversed, then the pairings between these saddles and the minima below also changes. Since the edit cost is dependent on these persistence pairs, the edit cost is drastically affected. To alleviate this, they introduce a parameter $\varepsilon$ which is known as the <i>stability parameter</i>. Before running the edit cost algorithm, each merge tree is run to a stabalizing algroithm where two saddles that are within $\varepsilon$ of each other are merged into a single saddle (bottom up).</p>
         <p>We can now define the set of costs we assign for merge trees. These costs are dependent on the persistence of these features. Let $p$ and $q$ be nodes in $T_1$ and $T_2$, respectively. Then, $p$ and $q$ are creators or destroyers of features in the merge trees. Let $(b_p,d_p)$ and $(b_q,d_q)$ be the birth and death times of these associated features, respectively. These can be represented as coordinates in the persistence diagram or as intervals on persistence barcodes.</p>
         <p>We define the $L_{\infty} \text{ cost } C_W$ as follows: 
           \begin{align}\gamma(p \rightarrow q) = & \min\begin{cases}\max\{|b_q-b_p|,|d_q-d_p|\}, \\ & \\ \frac{|d_p-b_p|+|d_q-b_q|}{2}\end{cases} \\ & \\ \gamma(p\rightarrow \lambda) = & \frac{|d_p-b_p|}{2} \\ & \\ \gamma(\lambda \rightarrow q) = & \frac{|d_q-b_q|}{2}\end{align}
@@ -87,30 +87,25 @@
         <p>We defined the $\text{ Overhange Cost } C_O$ as follows:
           \begin{align}\gamma(p \rightarrow q) = & \min\begin{cases}|b_q-b_p|+|d_q-d_p|, \\ & \\ |d_p-b_p|+|d_q-b_q|\end{cases} \\ & \\ \gamma(p\rightarrow \lambda) = & |d_p-b_p| \\ & \\ \gamma(\lambda \rightarrow q) = & |d_q-b_q|\end{align}
         </p>
+      </div>
+      <div class="page">
         <p>Turns out that $C_W$ is a metric.</p>
         <p>They provide some experimental studies for the usefulness of this metric. First, they provide an example of three scalar fields $f_1,f_2,f_3$ (simple and predictable) whose merge tree is provided. In this example, they run the algorithm to compute the tree mappings based on both the tree edit distance $D$ and the wasserstein distance $W$ (I'm not currently sure how exactly they are using wasserstein distance in their cost model). The edit distance cost model maps the tree of $f_1$ correctly to $f_2$ and from $f_2$ correctly to $f_3$. However, the wasserstein cost model fails once in each pair. See the paper for details, as they provide an explanation as to why $W$ fails in these cases. They claim that "$D$ in general establishes mappings that are better than $D_B$ and $W_1$ because it is aware of the structure of the merge tree and preserves the heirarchy captured in the tree". </p>
         <p>I believe what they mean by the matchings created by Wasserstein distance is the standard way that Wasserstein distance has to determine a matching between two persistence features. That is, in order to compute $W$, we need to find the "best matching" between the points in the persistence diagram. This is NOT using any sort of algorithm based on tree edit distance. In contrast, the tree edit distance measure $D$ assigns a mapping (i.e. finds a "best matching) differently. This is based completely on the algorithm described as the "constrained edit distance mapping" (possibly the restricted case).  So this specifically doesn't have to do with the cost model but only the edit distance mappings described in previous papers.</p>
         <p>They provide experimental results showing that $D$ is more discriminative than $W_1$ and $D_B$. This is for all values of the stability parameter $\varepsilon$. However, increasing $\varepsilon$ to a higher percentage of the maximum persistence (say from $1\%$ to $20\%$ ) closes the gap between these metrics. This is because as the parameter increase the tree slowly loses the tree structure and eventually all the nodes in the tree become direct children of the root node.</p>
-      </div>
-      <div class="page">
-        <div>
-          <div class="problem-label">Questions</div>
-          <ul>
-            <li>Is a two dimensional topological space equipped with a function, which turns out to be a scalar field, equivalent to just a 2-Dimensional Manifold equipped with a height function?</li>
-          </ul>
-        </div>
         <div>
           <div class="problem-label">Theoretical Contributions</div>
-          <p>Edit distance can be shown to be more discriminative than both the bottleneck distance of persistence diagrams and functional distortion distance between Reeb graphs. Because of this, I believe it is automatically more discriminative than the interleaving distance between Reeb graphs. Check the "strong equivalence of functional distortion distance and interleaving distance" paper to check .</p>
+          <p>The actual theoretical contributions from this paper are in the definition of the cost model for merge (and split) trees. It also includes their proofs that these cost models are indeed metrics. </p>
         </div>
         <div>
           <div class="problem-label">Computational Contributions</div>
           <p>Algorithm for finding the tree edit mappings is described in "A constrained edit distance between unordered labeled trees" by K. Zhang, where they then applied the discuessed edit costs. The inputs are two merge trees stabalized (see stabalization above). Note that the mappings created by the algorithm are depending on the choice of cost functions.</p>
         </div>
-      </div>
-     
-
-
+        <div>
+          <div class="problem-label">Applications and Experiments</div>
+          <p>Need to re-read experimental section</p>
+        </div>
+      </div>     
     </div>
   </body>
 </html>

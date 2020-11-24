@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/dreampulse/computer-modern-web-font/master/fonts.css">
+    <link rel="stylesheet" type="text/css" href="./style.css"/>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style type="text/css" media="print">
+      @page {
+          size: letter;   /* auto is the initial value */
+          margin: 0;  /* this affects the margin in the printer settings */
+      }
+
+    </style>
+    <link href="https://fonts.googleapis.com/css?family=Oswald|Roboto|Montserrat|Open+Sans&display=swap" rel="stylesheet">
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+          processEscapes: true
+        },
+        tex:{
+          tags: 'ams'
+        }
+      });
+    </script>
+    <script type="text/javascript"
+      src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="page">
+        <div class="header">
+          <div>Topological Metrics Survey</div>
+          <div style="font-size:0.8em;">Brian Bollen</div> 
+        </div>
+
+        <div>
+          <div class="problem-label">Our Goal</div>
+          <p>The main motiviating question for us (Professor Levine and I) is "How can we use topological methods to analyze similarity between scalar fields?". Given multiple scalar fields, we can attempt to find the similarity between them by first constructing their corresponding Reeb Graphs/Contour Trees/Merge Trees and then measuing similarity directly on the graphs that are created. This, of course, requires a well-defined notion of a measure or distance between these topological structures. The survey that we intend to create will be rooted in the idea that we are trying to find effective and efficient ways to compute similarity between scalar fields.</p>
+        </div>
+        <div>
+          <div class="problem-label">What have we found so far?</div>
+          <p><b>Distances for Reeb Graphs are Difficult but theoretically strong:</b> From what I've researched, any distance that is defined on Reeb graphs can be shown to be in NP (or be NP-hard). However, each of these distances has a lot of theoretical background which supports their utilization as valid (pseudo)metrics on Reeb graphs with proofs of stability as well as proofs of "discrimination" (the distance is greater than the bottleneck distance).</p>
+          <p><b>Merge Tree Distance has literature beyond theoretically-driven metrics:</b> A lot of the analysis of scalar fields has ignored using Reeb graphs or contour trees and instead has focused solely on merge/split trees. Because of this, there are numerous papers on defining similarity measures between merge trees or similarity measures between scalar fields using merge trees.</p>
+          <p><b>Separation of Communities:</b> There are multiple different communities that are contributing to finding similarity metrics between these topological structures: (1) The community focusing on creating mathematically sound distance metrics which can be shown to be stable, discriminative, and possibly related to other metrics. (2) The community focused on creating distance metrics specifically for the use in scalar field analysis without concern for proofs of stability or other relational proofs. </p>
+          <p><b>Difference in Metrics:</b> Currently, it seems that all metrics which are computationally tractable do not have solid proofs for their stability or discriminative nature. The converse is also true: those with extense mathematical proofs about their stability and other properties have also been shown to computationally complex (in NP).</p>
+        </div>
+        <div>
+          <div class="problem-label">Papers</div>
+          <p><a href="https://trello.com/b/qTpOQNKo/topological-metrics">Here</a> you'll find a Trello board with a list of papers that has been sifted through for the above notes.</p>
+        </div>
+
+      </div>
+
+  
+    </div>
+  </body>
+</html>
+
+
+
+
+
+      

@@ -4,6 +4,8 @@ body{
   /* font-family: 'Computer Modern Serif', sans-serif; */
   counter-reset:q section label;
   font-size:11pt;
+  counter-reset:level1;
+  counter-reset:level2;
 }
 .container{
   width:8.5in;
@@ -40,5 +42,29 @@ div.page{
   margin-top:20px;
   font-size:1.2em;
   font-weight:700;
+}
+
+.outline div{
+  margin:10px 0px;
+}
+
+.outline > div {
+  counter-increment:level1;
+  counter-reset:level2;
+}
+
+.outline > div > div {
+  counter-increment:level2;
+}
+
+.outline > div::before{
+  content: counter(level1) ". ";
+  font-weight:600;
+}
+
+.outline > div > div::before{
+  margin-left:20px;
+  content: counter(level1) "." counter(level2) ". ";
+  font-weight:600;
 }
 
