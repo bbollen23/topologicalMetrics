@@ -43,10 +43,13 @@
           </div>
           <div>Preliminary Definitions
             <div>Definition of Scalar Fields</div>
-            <div>Definition of Persistence Diagrams (for bottlneck and wasserstein distance)</div>
             <div>Definition of Reeb Graphs</div>
           </div>
-          <div>Bottleneck & Wasserstein Distance</div>
+          <div style="color:red;">Hausdorff Distance</div>
+          <div>Bottleneck & Wasserstein Distance
+            <div>Definition of Persistence Diagrams</div>
+            <div>Examples</div>
+          </div>
           <div>Interleaving Distance
             <div>Category Theory</div>
             <div>Pre-Cosheafs</div>
@@ -72,8 +75,17 @@
             <div>Complexity of Functional Distortion Distance</div>
             <div>Complexity of Edit Distance</div>
           </div>
+          <div>Applications
+            <div>Scalar Field Analysis</div>
+            <div>Mapper Graphs (?)</div>            
+          </div>
         </div>
         <br/>
+      </div>
+      <div>
+        <div style="font-size:1.75em;font-weight:600">Terminology</div>
+        <p><b>Definition:</b> When we say that a metric $d_M$ is <i>stable</i>, we imply that $d_M(f,g) \leq ||f-g||_{\inifty}$. In this case, $f$ and $g$ are the functions corresponding to two scalar fields $(\mathbb{X},f)$ and $(\mathbb{X},g)$. Note that in this case, it only makes sense to have $f$ and $g$ defined on the same domain. Furthermore, $f$ and $g$ in $d_M$ are assumed to be "encoded properly". By this, we mean that if the distance measure $M$ is defined on Reeb graphs, then the input to $d_M$ are the Reeb graphs corresponding to the functions $f,g$. This might help us decode statements like $d_I(f,g) \geq d_B(f,g)$, where $I$ refers to the interleaving distance of Reeb graphs and $B$ refers to the bottleneck distance between persistence diagrams.</p>
+        <p><b>Definition:</b> We say that a metric is $d_M$ <i>discriminative</i> if $d_M(f,g) \geq d_B(f,g)$, where $B$ is the bottleneck distance between persistence diagrams.</p>
       </div>
 
       <div class="page">
