@@ -51,8 +51,6 @@
             <div>Examples</div>
           </div>
           <div>Interleaving Distance
-            <div>Category Theory</div>
-            <div>Pre-Cosheafs</div>
             <div>Interleavings</div>
             <div>Examples</div>
           </div>
@@ -69,7 +67,6 @@
             <div>List of Comparison between each other</div>
           </div>
           <div>Computation
-            <div>Constructing Reeb Graphs (?)</div>
             <div>Simplicity of Bottleneck Distance/Wasserstein Distance</div>
             <div>Complexity of Interleaving Distance</div>
             <div>Complexity of Functional Distortion Distance</div>
@@ -84,8 +81,9 @@
       </div>
       <div>
         <div style="font-size:1.75em;font-weight:600">Terminology</div>
-        <p><b>Definition:</b> When we say that a metric $d_M$ is <i>stable</i>, we imply that $d_M(f,g) \leq ||f-g||_{\inifty}$. In this case, $f$ and $g$ are the functions corresponding to two scalar fields $(\mathbb{X},f)$ and $(\mathbb{X},g)$. Note that in this case, it only makes sense to have $f$ and $g$ defined on the same domain. Furthermore, $f$ and $g$ in $d_M$ are assumed to be "encoded properly". By this, we mean that if the distance measure $M$ is defined on Reeb graphs, then the input to $d_M$ are the Reeb graphs corresponding to the functions $f,g$. This might help us decode statements like $d_I(f,g) \geq d_B(f,g)$, where $I$ refers to the interleaving distance of Reeb graphs and $B$ refers to the bottleneck distance between persistence diagrams.</p>
-        <p><b>Definition:</b> We say that a metric is $d_M$ <i>discriminative</i> if $d_M(f,g) \geq d_B(f,g)$, where $B$ is the bottleneck distance between persistence diagrams.</p>
+        <p><b>Definition:</b> When we say that a metric $d_M$ is <i>stable</i>, we imply that $d_M(f,g) \leq ||f-g||_{\infty}$. In this case, $f$ and $g$ are the functions corresponding to two scalar fields $(\mathbb{X},f)$ and $(\mathbb{X},g)$. Note that in this case, it only makes sense to have $f$ and $g$ defined on the same domain. Furthermore, $f$ and $g$ in $d_M$ are assumed to be "encoded properly". By this, we mean that if the distance measure $M$ is defined on Reeb graphs, then the input to $d_M$ are the Reeb graphs corresponding to the functions $f,g$. This might help us decode statements like $d_I(f,g) \geq d_B(f,g)$, where $I$ refers to the interleaving distance of Reeb graphs and $B$ refers to the bottleneck distance between persistence diagrams.</p>
+        <p>While this ambiguous notation might help keep things short in some situations, it is important to know that the interleaving distance has varying definitions depending on Reeb Graphs/Persistence modules, and Bottleneck Distance also has varying degrees as well</p>
+        <p><b>Definition:</b> We say that a metric is $d_M$ is <i>discriminative</i> if $d_M(f,g) \geq d_B(f,g)$, where $B$ is the bottleneck distance between persistence diagrams.</p>
       </div>
 
       <div class="page">
@@ -94,7 +92,17 @@
         <p style="color:red;">The other idea is to defer the reader to more intense information, but I think that kind of defeats the purpose of the document. If we're going to have examples for each of the distances, the definitions should be pretty rigorous, IMO </p>
         <p style="color:red;">In general, I think it is wise to make sure this document can serve as a central location for definitions of these structures since the goal is to compare them so heavily.</p>
         <p style="color:red;">Maybe I'm thinking of this survey too broadly, though. To me, it almost feels like it would be a "manual" or like the a section in a textbook. I'm not sure if that's good or bad.</p>
+
+        <div style="font-size:1.75em;font-weight:600;">Notes</div>
+        <p>Introduction should explain who I'm serving with this survey</p>
+        <p>Same running example through 3 through 7</p>
+        <p>For applications, want to point out (1) what people have done with comparing top structures, (2) what could we do if we had these distances available (3) what is close to these distance in terms of use case</p>
+        <p>For applications, (1) should be in introduction while (2) and possibly (3) are more aspirational and can be in the last section</p>
+        <p>Representation might change computational bounds (simplicial complex vs mesh)</p>
+        <p>Alternatives to Reeb Graphs section: Merge Trees and Mapper Graphs</p>
       </div>
+
+
 
 
 
