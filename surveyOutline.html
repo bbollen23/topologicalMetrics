@@ -39,62 +39,93 @@
           <div>Outline for Topological Survey</div>
         </div>
         <div class="outline">
-          <div>Introduction
+          <div>
+            <h3>Introduction</h3>
+            <p>Motivate the problem with references to applications of finding distance between topological structures (persistence diagrams, merge trees etc.)</p>
           </div>
-          <div>Preliminary Definitions
-            <div>Definition of Scalar Fields</div>
-            <div>Definition of Reeb Graphs</div>
+          <div>
+            <h3>Preliminary Definitions</h3>
+            <p>Section devoted to defining scalar fields / $\mathbb{R}$-spaces, Reeb graphs, persistence, extended persistence, levelset zigzag persistence. I intend to make this section so that I only provide basic definitions and leave the details to the references for where these are defined.</p>
+            <p>Section should also include definition of bottleneck distance. Furthermore, since we are comparing bottleneck distance to the other metrics, I think we can introduce our standard example of a pair scalar fields / $\mathbb{R}$-spaces here and show the bottleneck distance between their corresponding persistence diagrams.</p>
           </div>
-          <div style="color:red;">Hausdorff Distance</div>
-          <div>Bottleneck & Wasserstein Distance
-            <div>Definition of Persistence Diagrams</div>
-            <div>Examples</div>
+          <div>
+            <h3>Interleaving Distance</h3>
+            <div>
+              History
+              <p>Short history of interleaving distance and when it was introduced for Reeb Graphs</p>
+            </div>
+            <div>
+              Definition of Interleaving Distance
+              <p>Also making sure this definition is concise (no category theory, no formal definition of pre-cosheafs)</p>
+            </div>
+            <div>
+              Example(s)
+              <p>Interleaving distance of the standardized pair(s) of Reeb graphs resulting from the pair of scalar fields introduced in section 2. This pair of Reeb graphs will be used as the examples for functional distortion distance and edit distance as well.</p>
+            </div>
           </div>
-          <div>Interleaving Distance
-            <div>Category Theory</div>
-            <div>Pre-Cosheafs</div>
-            <div>Interleavings</div>
-            <div>Examples</div>
+          <div>
+            <h3>Functional Distortion Distance</h3>
+            <div>History</div>
+            <div>Definition</div>
+            <div>Example(s)</div>
           </div>
-          <div>Functional Distortion Distance
-            <div>Examples</div>
+          <div>
+            <h3>Edit Distance</h3>
+            <div>History</div>
+            <div>Definition</div>
+            <div>Example(s)</div>
           </div>
-          <div>Edit Distance
-            <div>Examples</div>
-          </div>
-          <div>Comparison of Distances
-            <div>General Distance Comparison Diagram</div>
-            <div>List of Stability Results (vs $L^{\infty}$)</div>
-            <div>List of Discriminative Results (vs Bottleneck)</div>
-            <div>List of Comparison between each other</div>
-          </div>
-          <div>Computation
-            <div>Constructing Reeb Graphs (?)</div>
-            <div>Simplicity of Bottleneck Distance/Wasserstein Distance</div>
-            <div>Complexity of Interleaving Distance</div>
-            <div>Complexity of Functional Distortion Distance</div>
-            <div>Complexity of Edit Distance</div>
-          </div>
-          <div>Applications
-            <div>Scalar Field Analysis</div>
-            <div>Mapper Graphs (?)</div>            
-          </div>
+
         </div>
         <br/>
       </div>
-      <div>
-        <div style="font-size:1.75em;font-weight:600">Terminology</div>
-        <p><b>Definition:</b> When we say that a metric $d_M$ is <i>stable</i>, we imply that $d_M(f,g) \leq ||f-g||_{\inifty}$. In this case, $f$ and $g$ are the functions corresponding to two scalar fields $(\mathbb{X},f)$ and $(\mathbb{X},g)$. Note that in this case, it only makes sense to have $f$ and $g$ defined on the same domain. Furthermore, $f$ and $g$ in $d_M$ are assumed to be "encoded properly". By this, we mean that if the distance measure $M$ is defined on Reeb graphs, then the input to $d_M$ are the Reeb graphs corresponding to the functions $f,g$. This might help us decode statements like $d_I(f,g) \geq d_B(f,g)$, where $I$ refers to the interleaving distance of Reeb graphs and $B$ refers to the bottleneck distance between persistence diagrams.</p>
-        <p><b>Definition:</b> We say that a metric is $d_M$ <i>discriminative</i> if $d_M(f,g) \geq d_B(f,g)$, where $B$ is the bottleneck distance between persistence diagrams.</p>
-      </div>
+
 
       <div class="page">
-        <div style="font-size:1.75em;font-weight:600;">Questions</div>
-        <p style="color:red">In terms of density of this document, how much should we dive into the definitions of interleaving, functional distortion, and edit distance? My personal opinion is to put as much information for the interleaving distance that allows a reader to use this document as a source to actually understand how the distance works. In this case, we'd need to define some information from category theory and then go into pre-cosheafs. I think this can be done in a reasonably sized piece (ignoring constructibility).</p>
-        <p style="color:red;">The other idea is to defer the reader to more intense information, but I think that kind of defeats the purpose of the document. If we're going to have examples for each of the distances, the definitions should be pretty rigorous, IMO </p>
-        <p style="color:red;">In general, I think it is wise to make sure this document can serve as a central location for definitions of these structures since the goal is to compare them so heavily.</p>
-        <p style="color:red;">Maybe I'm thinking of this survey too broadly, though. To me, it almost feels like it would be a "manual" or like the a section in a textbook. I'm not sure if that's good or bad.</p>
+        <div class="outline start-8" >
+          <div>
+            <h3>Comparison of Distances</h3>
+            <div>General Distance Comparison Diagram
+              <p>Not only is a general diagram for this useful for reference, but it will also be helpful to the reader to help guide them through the list of results.</p>
+            </div>
+            <div>List of Stability Results (vs $L^{\infty}$)
+              <p>Not sure if this will take up much space since each metric is stable and I don't plan to reiterate the proofs.</p>
+            </div>
+            <div>
+              List of Discriminative Results (vs Bottleneck)
+              <p>Many works use the phrase "more discriminative than bottleneck distance" to refer to the fact that these metrics are often bounded below by the bottleneck distance. However, some of these papers are referencing different versions of persistence diagrams. I think this will be a good opportunity to be more explicit about how we determine the bottleneck distance between two Reeb graphs (Is it bottleneck distance between 0-dimensional persistence diagrams of the scalar fields or is it bottleneck distance on levelset persistence)?</p>
+            </div>
+            <div>
+              List of Comparison between each other
+              <p>List compiled of all the results from each paper</p>
+            </div>
+          </div>
+          <div>
+            <h3>Computation</h3>
+            <p>For the computational section, I first want to state complexity results for each.</p>
+            <p>Distances that are close that CAN be computed</p>
+            <p></p>
+            <div>Interleaving Distance</div>
+            <div>Functional Distortion Distance</div>
+            <div>Edit Distance</div>
+          </div>
+          <div>
+            <h3>Alternatives To Reeb Graphs</h3>
+            <p>At this point, since we discussed the computational difficulties of these metrics, it would be nice to discuss structures similar to Reeb graphs where the distances are either easier to compute or easier to approximate</p>
+            <div>Merge Trees
+              <p>State results for bottleneck distance being equal to the interleaving distance. Also discuss the edit distance defined on merge trees which is tractable (from "Edit Distance Between Merge Trees" by </p>
+            </div>
+            <div>Mapper(?)</div>            
+          </div>
+        </div>
+  
       </div>
+
+
+
+
+
+
 
 
 
