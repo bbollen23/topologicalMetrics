@@ -57,14 +57,22 @@ div.page{
   counter-increment:level2;
 }
 
-.outline > div::before{
+.outline > div > h3::before{
   content: counter(level1) ". ";
   font-weight:600;
+}div
+
+.outline > div > div {
+  margin-left:20px;
 }
 
+
 .outline > div > div::before{
-  margin-left:20px;
   content: counter(level1) "." counter(level2) ". ";
   font-weight:600;
 }
 
+
+.outline.start-8{
+  counter-reset: level1 7;
+}
