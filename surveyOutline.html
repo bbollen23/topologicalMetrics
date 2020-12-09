@@ -41,7 +41,7 @@
         <div class="outline">
           <div>
             <h3>Introduction</h3>
-            <p>Motivate the problem with references to applications of finding distance between topological structures (persistence diagrams, merge trees etc.)</p>
+            <p>Motivate the problem with references to applications of finding distance between topological structures (persistence diagrams, merge trees etc.). Furthermore, introduce motivation of scalar field analysis along with some approaches taken to finding similarity in scalar fields.</p>
           </div>
           <div>
             <h3>Preliminary Definitions</h3>
@@ -95,21 +95,27 @@
             </div>
             <div>
               List of Discriminative Results (vs Bottleneck)
-              <p>Many works use the phrase "more discriminative than bottleneck distance" to refer to the fact that these metrics are often bounded below by the bottleneck distance. However, some of these papers are referencing different versions of persistence diagrams. I think this will be a good opportunity to be more explicit about how we determine the bottleneck distance between two Reeb graphs (Is it bottleneck distance between 0-dimensional persistence diagrams of the scalar fields or is it bottleneck distance on levelset persistence)?</p>
+              <p>Many works use the phrase "more discriminative than bottleneck distance" to refer to the fact that these metrics are often bounded below by the bottleneck distance. However, some of these papers are referencing different versions of persistence diagrams. I think this will be a good opportunity to be more explicit about how we determine the bottleneck distance between two Reeb graphs (Is it bottleneck distance between 0-dimensional persistence diagrams of the scalar fields or is it bottleneck distance on levelset persistence?)</p>
             </div>
             <div>
               List of Comparison between each other
-              <p>List compiled of all the results from each paper</p>
+              <p>List comprising all the results comparing each distance to one another.</p>
             </div>
           </div>
           <div>
             <h3>Computation</h3>
-            <p>For the computational section, I first want to state complexity results for each.</p>
-            <p>Distances that are close that CAN be computed</p>
-            <p></p>
-            <div>Interleaving Distance</div>
-            <div>Functional Distortion Distance</div>
-            <div>Edit Distance</div>
+            <div>
+              Complexity Results
+              <p>Statements for the complexity classes of each distance. No plan to delve into the details of the complexity proofs.</p>
+            </div>
+            <div>
+              Approximations
+              <p>For this section, I would discuss any approximations (if any) to these distances. I will reserve disussion of these distances on different structures for later (interleaving distance on merge trees, for example).</p>
+            </div>
+            <div>
+              Implementations
+              <p>If any, I would like to provide resources for implementations of these distances. Even though each of this are in NP, small scale implementations can still be useful for understanding of the metrics.</p>
+            </div>
           </div>
           <div>
             <h3>Alternatives To Reeb Graphs</h3>
@@ -117,20 +123,16 @@
             <div>Merge Trees
               <p>State results for bottleneck distance being equal to the interleaving distance. Also discuss the edit distance defined on merge trees which is tractable (from "Edit Distance Between Merge Trees" by </p>
             </div>
-            <div>Mapper(?)</div>            
+          </div>
+          <div>
+            <h3>Applications</h3>
+            <p>In this section, I would like to attempt to answer a couple of questions: (1) If these metrics are available to use, what applications could they be used for, (2) which distances are close to these ones in terms of what they're used for.</p>
+            <p>To discuss question (1), we will want to look at the results from seciton 8.4 to better understand what situations would be better suited for different distances.</p>
           </div>
         </div>
   
       </div>
 
-      <div class="page">
-        <div style="font-size:1.75em;font-weight:600;">Notes</div>
-        <p>Introduction should explain who I'm serving with this survey</p>
-        <p>Same running example through 3 through 7</p>
-        <p>For applications, want to point out (1) what people have done with comparing top structures, (2) what could we do if we had these distances available (3) what is close to these distance in terms of use case</p>
-        <p>For applications, (1) should be in introduction while (2) and possibly (3) are more aspirational and can be in the last section</p>
-        <p>Representation might change computational bounds (simplicial complex vs mesh)</p>
-      </div>
 
 
     </div>
