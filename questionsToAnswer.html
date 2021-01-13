@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/dreampulse/computer-modern-web-font/master/fonts.css">
+    <link rel="stylesheet" type="text/css" href="./style.css"/>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style type="text/css" media="print">
+      @page {
+          size: letter;   /* auto is the initial value */
+          margin: 0;  /* this affects the margin in the printer settings */
+      }
+
+    </style>
+    <link href="https://fonts.googleapis.com/css?family=Oswald|Roboto|Montserrat|Open+Sans&display=swap" rel="stylesheet">
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+          processEscapes: true
+        },
+        tex:{
+          tags: 'ams'
+        },
+        "HTML-CSS": {
+          scale: 90
+        }
+      
+      });
+    </script>
+    <script type="text/javascript"
+      src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="page">
+        <div class="header">
+          <div>Questions to Answer/Things To Do</div>
+        </div>
+        <p><b>Relationship between Reeb graphs and persistence diagrams:</b> Make sure to understand how persistence and extended persistence relate to Reeb graphs. More specifically, give the reader solid inuition as to how we can create (extended) persistence diagrams from the Reeb graphs. It is important that we show the connection between persistence pairs and pairs of critical points (which can be found on the Reeb graph). Consider providing an example of constructing such persistence diagrams from the Reeb graph.</p>
+        <p><b>Understand Extended Persistence:</b> Gain some inutition for how relative homology works so that we understand fully how extended persistence is defined.</p>
+        <p><b>Understand Functional Distortion Distance:</b> Need to re-read the strong equivalence paper most likely so that FDD makes sense.</p>
+        <p><b>Understand Reeb graph Edit distance:</b> Not only do I need to refresh with the Edit distance paper, but it would also be smart to look into the idea of Universality of metric since the Edit Distance has this property.</p>
+        <p><b>Find Examples of these Reeb graphs:</b> Look into possible examples we can use for Edit, Functional, and Interleaving Distance.</p>
+        <p>Work on fine grained outline as well</p>
+        <p>Good idea to have a few meetings right at the beginning of when I come back to talk about functional distortion distance and edit distance more deeply.</p>
+        <p>What could we do in parallel to this survey?</p>
+      </div>
+
+
+
+
+    </div>
+  </body>
+</html>
+
+
+
+
+
+
+        <!-- <div>
+          Intuitively, this scalar field has a form where between critical points, each fiber is homotopic <note>check this</note> to other fibers in that same area. For example, if we take a torus standing on its end, where the function $f$ just maps to its height, then taking a fiber from the middle would be two circles. Now, as we adjust the value of the fiber (slightly) up or down, as long as we don't cross another critical point, the circles will still be "two circles", albeit closer or farther apart, in a sense. Note that in this scenario, the non-critical fibers can be thought of as two circles that are separated from one another (see disposition on tangent cirlces)  So, if our critical fiber is a figure-eight, then we can map each individual circle to respective circles of the figure-eight. If instead we had a single circle for the non-critical fiber, we'd still have a continuous map to the figure-eight by indentifying a pair of points of the circle that form a diameter as being the same two points. Then we simply have the quotient map (which is continuous) <note> why is this continous again? think about the open subset of a figure-eight and why it HAS to be a ball, not just an interval. It must have to do with the topology that is defined on the figure-eight (which must be the quotient topology)</note>. 
+        </div> -->
+
+
+      <!-- <div class="page">
+        <div> But if we had to map from the figure-eight to the circle or two circles, it would be non-continuous because you'd have to break up that center piece. Critical fibers are the only places where figure-eight like shapes are possible, so mapping to them should be no problem.
+        </div>
+        <div>Depending on the scenario, there are different ways to construct these attaching maps. In the 2-manifold with a Morse function case, our attaching maps can be defined by the <i>gradient flow</i>. For every point $x \in \mathbb{M}$, we have a gradient. A <i>flow</i> is a function $\gamma : \mathbb{M} \times \mathbb{R} \to \mathbb{M}$ such that for all $x \in \mathbb{M}$, $\gamma(x,0) = x$ and $\gamma(\gamma(x,t),s)  = \gamma(x,t+s)$. The gradient shows us which direction to go in, basically. We can imagine a set of vectors on our manifold showing us where the flow lines are. </div>
+      </div> -->
+      <!-- <div class="page">
+        <div class="section"><div class="title">Disposition on Tangent Cylinders</div></div>
+        <div>
+          We can have "tangent cylinders" in this case. The non-critical fibers are simply homotopic to figure eights. At the critical fibers on either side, there <i>must</i> be a figure-eight shape (or more tangent circles) so that we don't have to split up the figure-eight. This is to be expected though, because the critical fibers are points where things join or separate.
+        </div>
+      </div> -->
+      
