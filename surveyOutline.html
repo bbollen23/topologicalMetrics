@@ -46,6 +46,7 @@
           <div>
             <h3>Preliminary Definitions</h3>
             <p>Section devoted to defining scalar fields / $\mathbb{R}$-spaces, Reeb graphs, persistence, extended persistence, levelset zigzag persistence. I intend to make this section so that I only provide basic definitions and leave the details to the references for where these are defined.</p>
+            <p>Definition of $L^{\infty}$ in this section as well</p>
             <p>Section should also include definition of bottleneck distance. Furthermore, since we are comparing bottleneck distance to the other metrics, I think we can introduce our standard example of a pair scalar fields / $\mathbb{R}$-spaces here and show the bottleneck distance between their corresponding persistence diagrams.</p>
           </div>
           <div>
@@ -58,6 +59,7 @@
               Definition of Interleaving Distance
               <p>Also making sure this definition is concise (no category theory, no formal definition of pre-cosheafs)</p>
             </div>
+            <div>Stability Result</div>
             <div>
               Example(s)
               <p>Interleaving distance of the standardized pair(s) of Reeb graphs resulting from the pair of scalar fields introduced in section 2. This pair of Reeb graphs will be used as the examples for functional distortion distance and edit distance as well.</p>
@@ -68,12 +70,15 @@
             <h3>Functional Distortion Distance</h3>
             <div>History</div>
             <div>Definition</div>
+            <div>Stability Result</div>
             <div>Example(s)</div>
           </div>
           <div>
             <h3>Edit Distance</h3>
             <div>History</div>
             <div>Definition</div>
+            <div>Stability Result</div>
+            <div>Universal Property</div>
             <div>Example(s)</div>
           </div>
 
@@ -90,12 +95,9 @@
             <div>General Distance Comparison Diagram
               <p>Not only is a general diagram for this useful for reference, but it will also be helpful to the reader to help guide them through the list of results.</p>
             </div>
-            <div>List of Stability Results (vs $L^{\infty}$)
-              <p>Not sure if this will take up much space since each metric is stable and I don't plan to reiterate the proofs.</p>
-            </div>
             <div>
               List of Discriminative Results (vs Bottleneck)
-              <p>Many works use the phrase "more discriminative than bottleneck distance" to refer to the fact that these metrics are often bounded below by the bottleneck distance. However, some of these papers are referencing different versions of persistence diagrams. I think this will be a good opportunity to be more explicit about how we determine the bottleneck distance between two Reeb graphs (Is it bottleneck distance between 0-dimensional persistence diagrams of the scalar fields or is it bottleneck distance on levelset persistence?)</p>
+              <p>In this work, we will solely stick to the extended persistence case (possibly regular persistence). Extended persistence has a nice relationship to Reeb graphs and zigzag persistence is currently not in scope for our work.</p>
             </div>
             <div>
               List of Comparison between each other
@@ -109,11 +111,11 @@
               <p>Statements for the complexity classes of each distance. No plan to delve into the details of the complexity proofs.</p>
             </div>
             <div>
-              Approximations
+              Approximations (to our knowledge, there are none)
               <p>For this section, I would discuss any approximations (if any) to these distances. I will reserve disussion of these distances on different structures for later (interleaving distance on merge trees, for example).</p>
             </div>
             <div>
-              Implementations
+              Implementations (to our knowledge, there are none)
               <p>If any, I would like to provide resources for implementations of these distances. Even though each of this are in NP, small scale implementations can still be useful for understanding of the metrics.</p>
             </div>
           </div>
@@ -122,6 +124,9 @@
             <p>At this point, since we discussed the computational difficulties of these metrics, it would be nice to discuss structures similar to Reeb graphs where the distances are either easier to compute or easier to approximate</p>
             <div>Merge Trees
               <p>State results for bottleneck distance being equal to the interleaving distance. Also discuss the edit distance defined on merge trees which is tractable (from "Edit Distance Between Merge Trees" by </p>
+            </div>
+            <div>Contour Tree
+              <p>Frechet distance can be defined on contour trees, but I believe this is also NP-hard</p>
             </div>
           </div>
           <div>
@@ -132,9 +137,10 @@
         </div>
   
       </div>
-
-
-
+      
+      <div>To Do:</div>
+      <div>Brainstorm all the different examples we might need</div>
+      
     </div>
   </body>
 </html>
